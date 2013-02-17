@@ -43,8 +43,12 @@ public class MyAxonGuiceModule extends AxonGuiceModule {
 }}}
 
 Some of this modules accepts constructor parameters, some of them not.
-Modules with parameters has _AbstractClassesGroupingModule_ superclass with following functionality:
-
+Modules with parameters has _AbstractClassesGroupingModule_ superclass. 
+This kind modules intended to configure Axon subsystems which requires detailed knowledge of your domain - aggregate roots, event/command handlers, repositories and so on.
+_AbstractClassesGroupingModule_ provides three options of retrieving this information:
+ * Direct indication of required domain parts in module constructor (array of aggregate roots classes & etc);
+ * Auto-search in provided packages;
+ * Auto-search in provided collection of ClassesSearchGroup - this is most powerful way of AxonGuiceModule configuration. It allows combining search inclusion/exclusion filters/predicates and packages.
 
 
 =MongoDB, Redis, Cassandra, RabbitMQ, JMS & etc=
