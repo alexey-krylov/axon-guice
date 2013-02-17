@@ -2,7 +2,11 @@
 
 By default _AxonGuiceModule_ configured to be usable out of the box but with one  qualification - this usability acceptable only for testing: it uses FileSystemEventStore to store events, Sagas is not persistent, Command/Event buses will be functional only in one JVM. 
 
-All power of Axon can be achieved only by extending _AxonGuiceModule_:
+All power of Axon can be achieved only by extending _AxonGuiceModule_.
+
+= Details =
+
+_AxonGuiceModule_ contains several mandatory modules - you can change implementation each of them by overriding createXXXModule methods:
 {{{
 public class MyAxonGuiceModule extends AxonGuiceModule {
 
@@ -38,4 +42,12 @@ public class MyAxonGuiceModule extends AxonGuiceModule {
 }
 }}}
 
-= Details =
+Some of this modules accepts constructor parameters, some of them not.
+Modules with parameters has _AbstractClassesGroupingModule_ superclass with following functionality:
+
+
+
+=MongoDB, Redis, Cassandra, RabbitMQ, JMS, JBoss & etc=
+
+Axon-Guice does not provides all kind of implementation modules for the sake of simplicity. Instead of large amount of distinct (and usually very complex to configure) modules Axon-Guice provides elastic framework with clear extension points.
+
