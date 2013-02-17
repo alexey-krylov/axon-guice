@@ -2,6 +2,7 @@
   * ----
   * [ReleaseNotes Release notes]
   * [DevGuide Developer guide]
+     * [ExtendingAxonGuiceModule Extending AxonGuiceModule]
      * [Advanced Advanced Topics]
   * ----
   * [http://groups.google.com/group/axonframework Axon-Framework users group]
