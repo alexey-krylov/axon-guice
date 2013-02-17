@@ -4,7 +4,7 @@ Welcome to the developer documentation of axon-guice project - integration modul
 
 Current project version is: *1.0.0*
 
-==What are Axon Framework?==
+==Axon Framework - what is it?==
 Here is description from Axon Framework authors:
 
 "_Axon is a lightweight framework that helps developers build scalable and extensible applications by addressing these concerns directly in the architecture. This reference guide explains what Axon is, how it can help you and how you can use it._"
