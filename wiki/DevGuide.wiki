@@ -23,7 +23,7 @@ Module provides:
 
 There is a three main steps:
 
-1. Read Axon [http://www.axonframework.org/download/ manual] - all Axon features is available with this project
+1. Carefully read Axon [http://www.axonframework.org/download/ manual] - all Axon features is available with this project
 
 2. Install a Axon-Guice module:
 {{{
