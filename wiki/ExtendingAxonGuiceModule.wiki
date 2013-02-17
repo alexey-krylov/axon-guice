@@ -1,0 +1,39 @@
+= Introduction =
+
+By default _AxonGuiceModule_ configured to be usable only in testing - it uses FileSystemEventStore to store events, Sagas is not persistent, Command/Event buses will be functional only in one JVM. All power of Axon can be achieved by extending _AxonGuiceModule_:
+{{{
+public class MyAxonGuiceModule extends AxonGuiceModule {
+
+    @Override
+    protected DomainModule createDomainModule() {
+        return new EventSourcedDomainModule(Order.class);
+    }
+
+    @Override
+    protected RepositoryModule createRepositoryModule() {
+        return new EventSourcedRepositoryModule(Order.class);
+    }
+
+    @Override
+    protected CommandHandlingModule createCommandHandlingModule() {
+        return new CommandHandlingModule(SimpleCommandHandler.class, OrderCommandHandler.class);
+    }
+
+    @Override
+    protected AggregateRootCommandHandlingModule createAggregateRootCommandHandlingModule() {
+        return new AggregateRootCommandHandlingModule(Order.class);
+    }
+
+    @Override
+    protected EventHandlingModule createEventHandlingModule() {
+        return new EventHandlingModule(SimpleEventHandler.class);
+    }
+
+    @Override
+    protected SagaModule createSagaModule() {
+        return new SagaModule(TestOrderSaga.class);
+    }
+}
+}}}
+
+= Details =
