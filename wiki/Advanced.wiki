@@ -9,7 +9,9 @@ CQRS approach is not a silver bullet for every project. This approach requires g
 
 There is also known rule of thumb for project selection when CQRS can be very useful and effective - duration of the project should be at least 5 man-years.
 
+Second rule of thumb - CQRS is not needed for 95% of all projects.
+
 Useful links:
-* [http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ When to avoid CQRS]
-* [http://shishkin.wordpress.com/2008/10/10/when-to-use-domain-driven-design/ When to use DDD]
-* [http://www.infoq.com/articles/ddd-in-practice DDD in practice]
+ * [http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ When to avoid CQRS]
+ * [http://shishkin.wordpress.com/2008/10/10/when-to-use-domain-driven-design/ When to use DDD]
+ * [http://www.infoq.com/articles/ddd-in-practice DDD in practice]
