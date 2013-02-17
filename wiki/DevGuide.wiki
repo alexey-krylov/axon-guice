@@ -37,7 +37,9 @@ install(new AxonGuiceModule("com.mycomp.domain"));
 
 ==Why not just use pure Axon Framework?==
 
-Of course you can... but with Spring Framework only.
+Of course you can... but with Spring Framework only or with manual components instantiation and wiring mode.
+
+Module allows you to use Axon with all Guice pleasure - injection, modularity, absence of XML-based configurations, AOP, explicit bindings and so on.
 
 ==Where i can get it?==
 
