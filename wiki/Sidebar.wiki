@@ -1,0 +1,8 @@
+  * [http://axon-guice.googlecode.com/ Home]
+  * ----
+  * [ReleaseNotes Release notes]
+  * [DevGuide Developer guide]
+     * [Advanced Advanced Topics]
+  * ----
+  * [http://groups.google.com/group/axonframework Axon-Framework users group]
+  * [http://code.google.com/p/axon-guice/feeds Project feeds]
