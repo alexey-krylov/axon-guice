@@ -1,6 +1,8 @@
 = Introduction =
 
-By default _AxonGuiceModule_ configured to be usable only in testing - it uses FileSystemEventStore to store events, Sagas is not persistent, Command/Event buses will be functional only in one JVM. All power of Axon can be achieved by extending _AxonGuiceModule_:
+By default _AxonGuiceModule_ configured to be usable out of the box but with one  qualification - this usability acceptable only for testing: it uses FileSystemEventStore to store events, Sagas is not persistent, Command/Event buses will be functional only in one JVM. 
+
+All power of Axon can be achieved only by extending _AxonGuiceModule_:
 {{{
 public class MyAxonGuiceModule extends AxonGuiceModule {
 
