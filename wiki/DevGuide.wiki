@@ -33,7 +33,7 @@ install(new AxonGuiceModule("com.mycomp.domain"));
 
 3. Define your Aggregate Roots, Entities, Commands/Events, Command/Event Handlers, Domain Services, Query Services, Sagas and so on
 
-4. Override specific parts of AxonGuiceModule to meet your production requirements - for example you can use MongoEventStore instead of default FileSystemEventStore.
+4. [ExtendingAxonGuiceModule Override specific parts of AxonGuiceModule] to meet your production requirements - for example you can use MongoEventStore instead of default FileSystemEventStore.
 
 ==Why not just use pure Axon Framework?==
 
