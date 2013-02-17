@@ -15,3 +15,4 @@ Useful links:
  * [http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ When to avoid CQRS]
  * [http://shishkin.wordpress.com/2008/10/10/when-to-use-domain-driven-design/ When to use DDD]
  * [http://www.infoq.com/articles/ddd-in-practice DDD in practice]
+ * [http://www.axonframework.org/docs/2.0/single.html#d4e56 When to use Axon Framework]
