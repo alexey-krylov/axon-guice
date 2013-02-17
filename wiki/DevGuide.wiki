@@ -7,7 +7,7 @@ Current project version is: *1.0.0*
 ==Axon Framework - what is it?==
 Here is description from Axon Framework authors:
 
-"_Axon is a lightweight framework that helps developers build scalable and extensible applications by addressing these concerns directly in the architecture. This reference guide explains what Axon is, how it can help you and how you can use it._"
+"_Axon Framework helps build scalable, extensible and maintainable applications by supporting developers apply the Command Query Responsibility Segregation (CQRS) architectural pattern. It does so by providing implementations of the most important building blocks, such as aggregates, repositories and event buses (the dispatching mechanism for events). Furthermore, Axon provides annotation support, which allows you to build aggregates and event listeners withouth tying your code to Axon specific logic. This allows you to focus on your business logic, instead of the plumbing, and helps you to make your code easier to test in isolation._"
 
 ==What are axon-guice?==
 Axon-Guice is an integration module between [http://code.google.com/p/google-guice/ Google Guice] and [http://www.axonframework.org Axon Framework].
