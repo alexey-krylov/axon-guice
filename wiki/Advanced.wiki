@@ -8,3 +8,5 @@ All AxonGuiceModule fields and methods has _protected_ modifier, so you can easi
 CQRS approach is not a silver bullet for every project. This approach requires good programmers qualification with good OOP skills (in my opinion - Senior developers level with 5 years experience is a minimum). 
 
 There is also known rule of thumb for project selection when CQRS can be very useful and effective - duration of the project should be at least 5 man-years.
+
+[http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ When to avoid CQRS]
