@@ -1,102 +1,43 @@
 #labels Featured,Phase-Implementation
 ==Developer Guide==
-Welcome to the developer documentation of guice-repository project - a Google Guice adapted version of [http://static.springsource.org/spring-data/data-jpa/docs/current/reference/html/#preface Spring Data-JPA] project with some additional features.
+Welcome to the developer documentation of axon-guice project - integration module between Google Guice and Axon Framework.
 
-Current project version is: *2.0.2*
+Current project version is: *1.0.0*
 
-==What are Spring Data-JPA?==
-Here is description from Spring Data-JPA authors:
+==What are Axon Framework?==
+Here is description from Axon Framework authors:
 
-"_Spring JPA is part of the umbrella Spring Data project that makes it easy to easily implement JPA based repositories._"
+"_Axon is a lightweight framework that helps developers build scalable and extensible applications by addressing these concerns directly in the architecture. This reference guide explains what Axon is, how it can help you and how you can use it._"
 
-For my opinion it is very useful project that helps developer to work hard on business logic and avoid writing boilerplate code around persistence layer.
+==What are axon-guice?==
+Axon-Guice is an integration module between [http://code.google.com/p/google-guice/ Google Guice] and [http://www.axonframework.org Axon Framework].
 
-==What are guice-repository?==
-Guice-repository is an adapter for _[http://www.springsource.org/spring-data/jpa Spring Data-JPA]_ project which brings all known functionality of _[http://code.google.com/p/google-guice/wiki/GuicePersist Guice-Persist]_ with many additional features:
- * Support for [http://www.objectdb.com/java/jpa/persistence/store#Batch_Store_ batch store] (see [BatchStore this] page);
- * Allow access to EntityManager from Repository (see [http://code.google.com/p/guice-repository/source/browse/trunk/src/main/java/com/google/code/guice/repository/EntityManagerProvider.java EntityManagerProvider]);
- * Full support for @Transactional methods for all Guice-instantiated entities (see [Transactions this] page);
- * Support for [MultiplePersistenceUnits multiple] persistence units;
- * Support for [PersistenceInjections direct injection] of EntityManager/EntityManagerFactory with @PersistenceContext/@PersistenceUnit/@Inject&@Named annotations;
- * Support for injections in repositories/custom implementations;
- * [WebPersistFilter PersistFilter] as implementation of "Open EntityManager in View"/"session-in-view"/"session-per-http-request" pattern;
- * Offers natural way of Repository binding process; 
- * Repository auto-bind possibilities with exclusion/inclusion filters - see [AutoBind];
- * Ability to bind interceptor to catch Repository methods with @Transactional.
-
-*NOTE:* _guice-repository_ is not compatible with _guice-persist_ extension and can't coexist in one _pom.xml_.
+Module provides:
+ * Full support of [http://www.axonframework.org/docs/2.0/single.html#introduction 1-8] and [http://www.axonframework.org/docs/2.0/single.html#performance-tuning 10] of original Axon Framework documentation parts (all parts except Spring integration);
+ * Fully customizable API - there is no private/final methods & fields;
+ * Ability to inject all major Axon Framework components: CommandBus, EventBus, CommandGateway, UnitOfWork, Repository;
+ * Option to perform components auto-discovery or specify all of them manually - see [ExtendingAxonGuiceModule];
+ * Significant [http://code.google.com/p/axon-guice/source/browse/trunk/src/test/java/com/google/code/axonguice test coverage].
 
 ==How did this work?==
 
 There is a three main steps:
 
-1. Define a [http://static.springsource.org/spring-data/data-jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html Repository] interface
+1. Read Axon [http://www.axonframework.org/download/ manual] - all Axon features is available with this project
 
+2. Install a Axon-Guice module:
 {{{
-public interface AccountRepository extends JpaRepository<Account, Long>,
-        EntityManagerProvider {
-
-    Account findAccountByUuid(String uuid);
-
-    @Query("select a from Account a where a.name = :name")
-    Account findAccountByName(@Param("name") String name);
-}
+// auto-discovery of all CQRS/Axon components
+install(new AxonGuiceModule("com.mycomp.domain"));
 }}}
 
-This process is well described in the [http://static.springsource.org/spring-data/data-jpa/docs/current/reference/html/#repositories.definition original manual].
-All features described in 1.1-1.4 documentation parts is supported by _guice-repository_.
+3. Define your Aggregate Roots, Entities, Commands/Events, Command/Event Handlers, Domain Services, Query Services, Sagas and so on
 
-2. Install a Guice-module
+4. Override specific parts of AxonGuiceModule to meet your production requirements - for example you can use MongoEventStore instead of default FileSystemEventStore.
 
-You can select between manual Repository binding in JpaRepositoryModule and auto-binding with ScanningJpaRepositoryModule.
+==Why not just use pure Axon Framework?==
 
-Example for JpaRepositoryModule:
-{{{
-install(new JpaRepositoryModule("my-persistence-unit") {
-            @Override
-            protected void bindRepositories(RepositoryBinder binder) {
-                binder.bind(AccountRepository.class).to("my-persistence-unit");
-            }
-        });
-}}}
-
-
-Example for [AutoBind ScanningJpaRepositoryModule]:
-{{{
-install(new ScanningJpaRepositoryModule("com.mycorp.repo", "my-persistence-unit"));
-}}}
-
-In this case "com.mycorp.repo" is a package where your Repository interfaces is located.
-
-3. @Inject & use
-
-Inject and use Repository in your services/business-logic modules:
-
-{{{
-public class AccountService {
-   
-    @Inject
-    private AccountRepository accountRepository;
-
-    public void registerUser(String login, String password) throws RegistrationException{
-     // ... some checks & etc
-     accountRepository.save(new Account(login, password));
-     // ... something else
-    }
-
-    public Account findAccount(String login) throws FinderException{
-     return accountRepository.findAccountByLogin(login);
-    }
-}
-}}}
-
-==Why not just use pure Guice-Persist?==
-
-My own best-reasons-list for this is:
- * Reduce boilerplate code around persistence layer
- * Simplify understanding of Domain model and its lifecycle aspects between team members
- * Isolation from ORM-configuration vendor specifics (see [ImplementationSpecifics this] page) in EntityManager configuration
- * OOM-protected Batch-insert feature
+Of course you can... but with Spring Framework only.
 
 ==Where i can get it?==
 
@@ -104,12 +45,12 @@ Project is mavenized and published in Central Maven repository.
 
 {{{
 <dependency>
-    <groupId>com.google.code.guice-repository</groupId>
-    <artifactId>guice-repository</artifactId>
+    <groupId>com.google.code.axon-guice</groupId>
+    <artifactId>axon-guice</artifactId>
     <version>${version.guice-repository}</version>
 </dependency>
 }}}
 
-This project is depends on many other 3rd party libraries which is required to work. So, _without_ Maven you should manually add actual versions of this 3rd party libraries. Actual list of them can be viewed in _dependencies_ section of [http://code.google.com/p/guice-repository/source/browse/trunk/pom.xml pom.xml].
+This project is depends on several 3rd party libraries which is required to work. So, _without_ Maven you should manually add actual versions of this 3rd party libraries. Actual list of them can be viewed in _dependencies_ section of [http://code.google.com/p/axon-guice/source/browse/trunk/pom.xml pom.xml].
 
 Actual project version will be always on top of this page.
