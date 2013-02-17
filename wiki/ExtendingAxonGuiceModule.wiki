@@ -47,7 +47,6 @@ Modules with parameters has _AbstractClassesGroupingModule_ superclass with foll
 
 
 
-=MongoDB, Redis, Cassandra, RabbitMQ, JMS, JBoss & etc=
+=MongoDB, Redis, Cassandra, RabbitMQ, JMS & etc=
 
 Axon-Guice does not provides all kind of implementation modules for the sake of simplicity. Instead of large amount of distinct (and usually very complex to configure) modules Axon-Guice provides elastic framework with clear extension points.
-
