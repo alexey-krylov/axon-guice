@@ -1,6 +1,6 @@
 #labels Featured,Phase-Implementation
 ==Developer Guide==
-Welcome to the developer documentation of axon-guice project - integration module between Google Guice and Axon Framework.
+Welcome to the developer documentation of _axon-guice_ project - integration module between Google Guice and Axon Framework.
 
 Current project version is: *1.0.0*
 
