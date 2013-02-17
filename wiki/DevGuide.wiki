@@ -14,7 +14,7 @@ Axon-Guice is an integration module between [http://code.google.com/p/google-gui
 
 Module provides:
  * Full support of [http://www.axonframework.org/docs/2.0/single.html#introduction 1-8] and [http://www.axonframework.org/docs/2.0/single.html#performance-tuning 10] of original Axon Framework documentation parts (all parts except Spring integration);
- * Fully customizable API - there is no private/final methods & fields;
+ * Fully customizable API;
  * Ability to inject all major Axon Framework components: CommandBus, EventBus, CommandGateway, UnitOfWork, Repository;
  * Option to perform components auto-discovery or specify all of them manually - see [ExtendingAxonGuiceModule];
  * Significant [http://code.google.com/p/axon-guice/source/browse/trunk/src/test/java/com/google/code/axonguice test coverage].
