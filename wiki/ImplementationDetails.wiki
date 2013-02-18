@@ -1,6 +1,6 @@
 =Implementation details=
 ==Auto-search for Command/Event handlers==
-Use @CommandHandlerComponent and @EventHandlerComponent annotations to specify which classes should be instantiated as Axon's Command and Event handlers. Instances of this classes will be bound into Singleton scope.
+Use _@CommandHandlerComponent_ and _@EventHandlerComponent_ annotations to specify which classes should be instantiated as Axon's Command and Event handlers. Instances of this classes will be bound into Singleton scope.
 
 _If you choose option of manual handlers specification than you can skip annotating step._
 
