@@ -16,7 +16,7 @@ Axon-Guice provides you possibilities of the following injections:
 ==JSR-250 Support==
 Axon-Guice bundled with JSR-250 support based on [http://code.google.com/p/mycila/wiki/MycilaGuice Mycila Guice Project]. Implementation of JSR-250 support can always be disabled or changed by overriding appropriate methods of _AxonGuiceModule_.
 
-Currently there is no default @PreDestroy call point because each project unique and has different shutdown mechanics.
+Currently there is no default @PreDestroy call point because each project is unique and has different shutdown mechanics.
 
 To call @PreDestroy at shutdown just use this construction:
 {{{
