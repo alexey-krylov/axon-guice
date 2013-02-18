@@ -49,7 +49,7 @@ Project is mavenized and published in Central Maven repository.
 <dependency>
     <groupId>com.google.code.axon-guice</groupId>
     <artifactId>axon-guice</artifactId>
-    <version>${version.guice-repository}</version>
+    <version>${version.axon-guice}</version>
 </dependency>
 }}}
 
