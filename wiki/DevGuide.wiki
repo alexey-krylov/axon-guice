@@ -21,7 +21,7 @@ Module provides:
 
 ==How did this work?==
 
-There is a three main steps:
+There is a four main steps:
 
 1. Carefully read Axon [http://www.axonframework.org/download/ manual] - all Axon features is available with this project
 
