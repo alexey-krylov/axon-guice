@@ -41,7 +41,7 @@ Of course you can... but with Spring Framework only or with manual components in
 
 Module allows you to use Axon with all Guice pleasure - injection, modularity, absence of XML-based configurations, AOP, explicit bindings and so on.
 
-==Where i can get it?==
+==Where can i get it?==
 
 Project is mavenized and published in Central Maven repository.
 
