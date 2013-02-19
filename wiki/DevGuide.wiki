@@ -43,7 +43,7 @@ Module allows you to use Axon with all Guice pleasure - injection, modularity, a
 
 ==Where can i get it?==
 
-Project is mavenized and published in Central Maven repository.
+Project is mavenized and published in the Central Maven repository.
 
 {{{
 <dependency>
