@@ -57,7 +57,7 @@ All auto-searches performs with [http://code.google.com/p/reflections/ Reflectio
 Axon-Guice does not provides all kind of implementation modules for the sake of simplicity. Instead of large amount of distinct (and usually very complex to configure) modules Axon-Guice provides elastic framework with clear extension points.
 
 =Auto-search with Classes Search Groups=
-Most powerful way of auto resolution of Axon(CQRS) components is using ClassesSearchGroupBuilder.
+Most powerful way of Axon components auto resolution is using ClassesSearchGroupBuilder.
 
 Here is simple example:
 {{{
