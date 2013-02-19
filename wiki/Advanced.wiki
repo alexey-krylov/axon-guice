@@ -11,6 +11,8 @@ There is also known rule of thumb for project selection when CQRS and DDD can be
 
 Second rule of thumb - CQRS is not needed for 95% of all projects.
 
+Third rule of thumb - project should have *complex* business logic.
+
 Useful links:
  * [http://www.udidahan.com/2011/04/22/when-to-avoid-cqrs/ When to avoid CQRS]
  * [http://shishkin.wordpress.com/2008/10/10/when-to-use-domain-driven-design/ When to use DDD]
