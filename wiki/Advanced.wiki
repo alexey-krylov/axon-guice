@@ -2,7 +2,7 @@
 
 Main principles that has been used for _axon-guice_ API design is simplicity and flexibility.
 
-All AxonGuiceModule fields and methods has _protected_ modifier, so you can easily create your own variation of this module. 
+Most of _AxonGuiceModule_ fields and methods has _protected_ modifier, so you can easily create your own variation of this module. 
 
 == CQRS learning curve ==
 CQRS approach is not a silver bullet for every project. This approach requires good programmers qualification with good OOP skills (in my opinion - senior developers level with 5 years of experience is a minimum). Also deep DDD understanding for all team members is required. 
